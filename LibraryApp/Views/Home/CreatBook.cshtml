@@ -1,0 +1,49 @@
+﻿@model LibraryApp.Models.BookModel
+
+
+@{
+    ViewData["Title"] = "CreatBook";
+}
+
+<h1>הוסף ספר למדף </h1>
+
+<h4>BookModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hight" class="control-label"></label>
+                <input asp-for="hight" class="form-control" />
+                <span asp-validation-for="hight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="shelf" class="control-label"></label>
+                <input asp-for="shelf" class="form-control" />
+                <span asp-validation-for="shelf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="width" class="control-label"></label>
+                <input asp-for="width" class="form-control" />
+                <span asp-validation-for="width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
